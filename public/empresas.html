@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">              
+    <title>
+        Seleccion candidatos
+    </title>
+</head> 
+<body>     
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>          
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>   
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.bundle.js"></script>   
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>                   
+    <h1> Seleccion candidatos </h1>
+             
+    <section> 
+        
+        <h1> grupoprueba </h1>
+        <table class="table table-bordered panel-body">
+            <thead class="bg-primary text-white">
+                <tr>
+                    <th> Puesto </th>
+                    <th>Candidato seleccionados </th>
+                    <th>Puntaje </th>
+                </tr>
+            </thead>
+            <tbody id="appgrupoprueba">
+                <tr v-for="todo in todos">
+                    <td> {{ todo.puesto}} </td>
+                    <td> {{ todo.candidato}} </td>
+                    <td> {{ todo.score}} </td>
+                </tr>
+            </tbody>  
+        </table>
+
+        <script>
+            new Vue({
+                el: "#appgrupoprueba",
+                data: {
+                    todos: [{"puesto":"conciliador1","candidato":"Persona Seis","score":6.510416666666666},{"puesto":"pensador1","candidato":"Persona Cinco","score":39.062500000000014},{"puesto":"lider1","candidato":"Persona Dos","score":58.59375000000003},{"puesto":"hacedor1","candidato":"Persona Tres","score":123.69791666666673}]
+                }
+            })  
+        </script>
+     
+    </section>  
+    <section> 
+         
+        <h2> Grafico del equipo grupoprueba </h2>
+        <canvas id="myChartgrupoprueba}" width="331" height="165" class="chartjs-render-monitor" style="display: block; width: 331px; height: 165px;">
+        </canvas>
+        <script>
+            var marksData = {
+                labels:["Persona Seis","Persona Cinco","Persona Dos","Persona Tres"],
+                datasets: [
+                    {
+                        label: '# diferencia de parecido al puesto  ',
+                        data: ["6.510416666666666","39.062500000000014","58.59375000000003","123.69791666666673"],
+                        backgroundColor: ["rgba(216, 0,115, 0.4)","rgba(216, 63.75,109, 0.4)","rgba(216, 127.5,62, 0.4)","rgba(216, 191.25,230, 0.4)"],
+                        borderColor:["rgba(100,0,154,0.6)","rgba(100,63.75,204,0.6)","rgba(100,127.5,168,0.6)","rgba(100,191.25,125,0.6)"],
+                        borderWidth: 1
+                    }
+                ]
+            };     
+            var ctx = document.getElementById("myChartgrupoprueba}");
+            var myRadarChart = new Chart(ctx, {
+                type: 'bar',
+                data: marksData,
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero:true
+                            }
+                        }]
+                    }
+                }
+            });
+
+        
+        </script>
+     
+    </section>  
+    <section> 
+        
+        <h1> grupo1 </h1>
+        <table class="table table-bordered panel-body">
+            <thead class="bg-primary text-white">
+                <tr>
+                    <th> Puesto </th>
+                    <th>Candidato seleccionados </th>
+                    <th>Puntaje </th>
+                </tr>
+            </thead>
+            <tbody id="appgrupo1">
+                <tr v-for="todo in todos">
+                    <td> {{ todo.puesto}} </td>
+                    <td> {{ todo.candidato}} </td>
+                    <td> {{ todo.score}} </td>
+                </tr>
+            </tbody>  
+        </table>
+
+        <script>
+            new Vue({
+                el: "#appgrupo1",
+                data: {
+                    todos: [{"puesto":"pensador1","candidato":"Persona Cinco","score":39.062500000000014},{"puesto":"conciliador1","candidato":"Persona Uno ","score":41.23263888888891},{"puesto":"pensador2","candidato":"Persona Cuatro","score":56.42361111111114},{"puesto":"lider1","candidato":"Persona Dos","score":58.59375000000003},{"puesto":"hacedor1","candidato":"Persona Tres","score":123.69791666666673},{"puesto":"hacedor2","candidato":"Persona Seis","score":132.37847222222226}]
+                }
+            })  
+        </script>
+     
+    </section>  
+    <section> 
+         
+        <h2> Grafico del equipo grupo1 </h2>
+        <canvas id="myChartgrupo1}" width="331" height="165" class="chartjs-render-monitor" style="display: block; width: 331px; height: 165px;">
+        </canvas>
+        <script>
+            var marksData = {
+                labels:["Persona Cinco","Persona Uno ","Persona Cuatro","Persona Dos","Persona Tres","Persona Seis"],
+                datasets: [
+                    {
+                        label: '# diferencia de parecido al puesto  ',
+                        data: ["39.062500000000014","41.23263888888891","56.42361111111114","58.59375000000003","123.69791666666673","132.37847222222226"],
+                        backgroundColor: ["rgba(216, 0,42, 0.4)","rgba(216, 42.5,57, 0.4)","rgba(216, 85,208, 0.4)","rgba(216, 127.5,27, 0.4)","rgba(216, 170,85, 0.4)","rgba(216, 212.5,174, 0.4)"],
+                        borderColor:["rgba(100,0,239,0.6)","rgba(100,42.5,23,0.6)","rgba(100,85,95,0.6)","rgba(100,127.5,17,0.6)","rgba(100,170,117,0.6)","rgba(100,212.5,194,0.6)"],
+                        borderWidth: 1
+                    }
+                ]
+            };     
+            var ctx = document.getElementById("myChartgrupo1}");
+            var myRadarChart = new Chart(ctx, {
+                type: 'bar',
+                data: marksData,
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero:true
+                            }
+                        }]
+                    }
+                }
+            });
+
+        
+        </script>
+     
+    </section>  
+    <section> 
+        
+        <h1> grupo2 </h1>
+        <table class="table table-bordered panel-body">
+            <thead class="bg-primary text-white">
+                <tr>
+                    <th> Puesto </th>
+                    <th>Candidato seleccionados </th>
+                    <th>Puntaje </th>
+                </tr>
+            </thead>
+            <tbody id="appgrupo2">
+                <tr v-for="todo in todos">
+                    <td> {{ todo.puesto}} </td>
+                    <td> {{ todo.candidato}} </td>
+                    <td> {{ todo.score}} </td>
+                </tr>
+            </tbody>  
+        </table>
+
+        <script>
+            new Vue({
+                el: "#appgrupo2",
+                data: {
+                    todos: [{"puesto":"pensador1","candidato":"Persona Cinco","score":39.062500000000014},{"puesto":"conciliador1","candidato":"Persona Cuatro","score":49.913194444444436},{"puesto":"lider1","candidato":"Persona Uno ","score":106.33680555555559},{"puesto":"hacedor1","candidato":"Persona Seis","score":145.3993055555556}]
+                }
+            })  
+        </script>
+     
+    </section>  
+    <section> 
+         
+        <h2> Grafico del equipo grupo2 </h2>
+        <canvas id="myChartgrupo2}" width="331" height="165" class="chartjs-render-monitor" style="display: block; width: 331px; height: 165px;">
+        </canvas>
+        <script>
+            var marksData = {
+                labels:["Persona Cinco","Persona Cuatro","Persona Uno ","Persona Seis"],
+                datasets: [
+                    {
+                        label: '# diferencia de parecido al puesto  ',
+                        data: ["39.062500000000014","49.913194444444436","106.33680555555559","145.3993055555556"],
+                        backgroundColor: ["rgba(216, 0,100, 0.4)","rgba(216, 63.75,166, 0.4)","rgba(216, 127.5,102, 0.4)","rgba(216, 191.25,203, 0.4)"],
+                        borderColor:["rgba(100,0,204,0.6)","rgba(100,63.75,155,0.6)","rgba(100,127.5,128,0.6)","rgba(100,191.25,47,0.6)"],
+                        borderWidth: 1
+                    }
+                ]
+            };     
+            var ctx = document.getElementById("myChartgrupo2}");
+            var myRadarChart = new Chart(ctx, {
+                type: 'bar',
+                data: marksData,
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero:true
+                            }
+                        }]
+                    }
+                }
+            });
+
+        
+        </script>
+     
+    </section>  
+</body>    
+</html>  

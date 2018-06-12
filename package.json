@@ -1,0 +1,17 @@
+{
+  "name": "seleccion_personal",
+  "version": "1.0.0",
+  "description": "Programa para realizar seleccion masiva de personas para las vacantes de una o varias empresas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andres Manuel Arias Ariza",
+  "license": "ISC",
+  "dependencies": {
+    "csvdata": "^1.4.0",
+    "nodemailer": "^4.6.3",
+    "vue": "^2.5.16",
+    "vue-server-renderer": "^2.5.16"
+  }
+}
