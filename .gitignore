@@ -1,0 +1,6 @@
+.vscode/
+.jshintrc
+.git/
+node_modules/
+public/empresas.html.zip
+data/
