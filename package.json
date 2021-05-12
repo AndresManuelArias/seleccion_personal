@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "csvdata": "^1.4.0",
-    "nodemailer": "^4.6.3",
+    "nodemailer": "^6.4.16",
     "vue": "^2.5.16",
     "vue-server-renderer": "^2.5.16"
   }
